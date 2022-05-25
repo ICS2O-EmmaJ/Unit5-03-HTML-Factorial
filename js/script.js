@@ -5,30 +5,27 @@
 "use strict"
 
 /**
- * This function displays all numbers from 0 up to the user number
+ * This function displays the factorial of the user's number
  */
-function repeatSentence() {
-  	// initialize the counter
-	let counter = 0
-	
-	// initialize the final sentence display
-	let finalSentences = ""
-	
-	// get how many times to repeat
-	let sentence = document.getElementById('userSentence').value
-	
+function factorialOfNumber() {
+  // initialize the counter and facNumber
+	let counter = 1;
+
+  // initialize the facNumber display
+  let facNumber = 1;
+
 	// get the user number
 	let userNum = parseInt(document.getElementById('userNum').value)	
-
-	// use a do..while loop to create the final sentence display
+  
+	// use a do..while loop to create the factorial display
 	do {
 		// build the string of sentences
-		finalSentences = finalSentences + sentence + "<br>"
+		facNumber = facNumber * counter + "<br>"
 		
 		//increment the counter
 		counter = counter + 1
-	} while (counter < userNum)
+	} while (counter <= userNum)
 
   	// return the string of sentences back to html
-  	document.getElementById('display-results').innerHTML = finalSentences
+  	document.getElementById('display-results').innerHTML = facNumber
 }
